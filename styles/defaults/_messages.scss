@@ -1,0 +1,21 @@
+.generalMessages {
+  padding : 2em;
+  position : fixed;
+  width : 100%;
+  z-index : 10000;
+  background-color : rgba(0,0,0,0.8);
+ @extend %flexbox;
+}
+
+.generalMessages span {
+  @include flex-grow(1);
+}
+
+.generalMessages span {
+  @justify-content(flex-start);
+}
+
+.generalMessages span:last-child {
+  @include flex-grow(0);
+}
+

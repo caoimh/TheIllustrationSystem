@@ -1,0 +1,106 @@
+/* TABLES */
+
+
+table {
+	border-collapse: collapse;
+	width: 100%;	
+	margin-bottom: 4em;
+}
+
+caption,thead,tfoot {
+	font-weight: bold;
+}
+
+caption {
+	padding:1em;
+	text-align: left;
+	font-weight: normal;
+	background-color: $darkGrey;
+	color: #f1f1f1;
+}
+
+thead {
+	background-color: $superLightGrey;
+	border-bottom: 1px solid $lightGrey;
+	/*display :  none;*/
+}
+
+tfoot {
+	border-top: 1px solid $lightGrey;
+	border-bottom: 1px solid $lightGrey;
+}
+
+tfoot th {
+	padding-bottom: 0.5em;
+}
+
+
+tr:last-child {
+	border-bottom: 0;
+}
+
+th {
+    color: $black;
+    font-weight: bold;
+    padding: 0.4375em 1em;
+    font-weight: bold;
+    border-top: 1px solid #d8d8d8;
+}
+td, th {    
+    font-size: 1em;
+    text-align: left;
+}
+
+td {
+	padding: .4375em 1em 0.5em 1em;
+	border-bottom: 1px solid $lightGrey;
+	border-right: 1px solid $lightGrey;
+	line-height: 1.5em;
+	/*-- V --*/
+	background-color: #fff;
+}
+
+td:last-child {
+  border-right : none;
+}
+
+
+/* Condensed tables*/
+table.condensed {
+	font-size: 0.8em;
+}
+
+table.condensed caption{
+	padding: 0.5em;
+}
+
+table.condensed td{
+    padding: 0.25em;
+    text-align: left;
+    height: 1.5em;
+}
+
+table.condensed th {
+	padding: 0.8em;
+}
+
+/* Zebra striping */
+
+table.zebra tr:nth-of-type(odd) {
+  background : #fff;
+}
+
+table.zebra tr :last-child { /*Needed if zebra striping is on*/
+  background : transparent;
+}
+
+table.zebra tr {
+  border : 0;
+}
+
+table {
+/*display : none;*/
+}
+
+
+

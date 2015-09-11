@@ -1,0 +1,40 @@
+<!--#include virtual="includes/htmlstart.shtml" -->
+<!--#include virtual="includes/headstart.shtml" -->
+<!--#include virtual="includes/meta.shtml" -->
+<!--#include virtual="includes/title.shtml" -->
+<link rel="stylesheet" href="styles/main.css">
+<style type="text/css">
+/*-- GRID BACKGROUND --*/
+body {
+  background-color : #f8f8f8;
+  background-image: url("images/8pxx.png")!important;
+  }
+section {
+	padding: 2em;
+}
+
+
+
+
+</style>
+
+<!--#include virtual="includes/headscripts.shtml" -->
+<!--#include virtual="includes/headstop.shtml" -->
+<!--#include virtual="includes/bodystart.shtml" -->
+<!--#include virtual="includes/browsehappy.shtml" -->
+
+<section class="heroBox">
+<header>
+	<h1>Pistrap test page - experiment</h1>
+	<p>Pitstrap sub header</p>
+	<span class="icon-cog"></span>
+	<span class="icon-arrow-up"></span>
+	<span class="icon-arrow-left"></span>
+</header>
+</section>
+
+
+
+<!--#include virtual="includes/basescripts.shtml" -->
+<!--#include virtual="includes/bodystop.shtml" -->
+<!--#include virtual="includes/htmlstop.shtml" -->

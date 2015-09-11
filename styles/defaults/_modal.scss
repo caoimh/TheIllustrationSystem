@@ -1,0 +1,48 @@
+/*-- MODALS --*/
+/*-- kudos : http://demo.agektmr.com/dialog/ --*/
+
+dialog {
+  margin: auto;
+  padding: 1em;
+  background: white;
+  color: black;
+  display: none; 
+  @include paddingTRBL(2);
+  min-height : 10em;
+  max-width : 34em;
+  
+  h4 {
+  	margin-right : 2em;
+  	}
+  	
+  hr {
+  	margin-bottom : 1em;
+  }
+}
+
+dialog[open] {
+  display: block;
+}
+
+dialog::backdrop {
+  background-color : rgba(0,0,0,0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* for small devices, modal dialogs go full-screen */
+@media screen and (max-width: 540px) {
+  dialog[_polyfill_modal] {  /* TODO: implement */
+    top: 0;
+    width: auto;
+    margin: 1em;
+  }
+}
+
+._dialog_overlay {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+}

@@ -1,0 +1,94 @@
+/*-- MARGINS --*/
+/*-- Usage example: @include marginTL(0.5);--*/
+/*-- The 0.5 is multiplied by 16 (i.e 1 $baseUnit)--*/
+/*-- == margin-top:8px, margin-left:8px --*/
+
+
+/*-- T: Top --*/
+/*-- R: right --*/
+/*-- B: Bottom--*/
+/*-- L: Left--*/
+/*-- 
+4 sides							TRBL
+3 sides - no top				RBL
+3 sides - no bottom				TRL
+3 sides - no left				TRB
+3 sides - no right				TBL
+
+2 sides - no left no right		TB
+2 sides - no top no bottom		RL
+2 sides - no top no left		RB
+2 sides - no bottom no left		TR
+2 sides - no top no right		BL
+2 sides - no bottom no right	TL
+
+1 side - top					T
+1 side - right					R
+1 side - bottom					B
+1 side - left					L
+
+--*/
+
+/* $baseUnit is set in functions.scss */
+
+
+@mixin marginTRBL($times) {
+    margin : $baseUnit * $times $baseUnit* $times $baseUnit* $times $baseUnit* $times;
+  }
+
+@mixin marginRBL($times) {
+    margin : 0 $baseUnit * $times $baseUnit* $times $baseUnit* $times;
+  }
+  
+@mixin marginTRL($times) {
+    margin : $baseUnit * $times $baseUnit * $times 0 $baseUnit* $times;
+  }
+  
+@mixin marginTRB($times) {
+    margin : $baseUnit * $times $baseUnit * $times $baseUnit* $times 0;
+  }
+  
+@mixin marginTBL($times) {
+    margin : $baseUnit * $times 0 $baseUnit * $times $baseUnit* $times;
+  }
+  
+@mixin marginTB($times) {
+    margin : $baseUnit * $times 0 $baseUnit * $times 0;
+  }
+  
+@mixin marginRL($times) {
+    margin : 0 $baseUnit * $times 0 $baseUnit * $times;
+  }
+  
+@mixin marginRB($times) {
+    margin : 0 $baseUnit * $times $baseUnit * $times 0;
+  }
+  
+@mixin marginTR($times) {
+    margin : $baseUnit * $times $baseUnit * $times 0 0;
+  }
+  
+@mixin marginBL($times) {
+    margin : 0 0 $baseUnit * $times $baseUnit * $times;
+  }
+ 
+  
+@mixin marginTL($times) {
+    margin : $baseUnit * $times 0 0 $baseUnit * $times;
+  }
+  
+@mixin marginT($times) {
+    margin : $baseUnit * $times 0 0 0;
+  }
+  
+@mixin marginR($times) {
+    margin : 0 $baseUnit * $times 0 0;
+  }
+  
+@mixin marginB($times) {
+    margin : 0 0 $baseUnit * $times 0;
+  }
+  
+@mixin marginL($times) {
+    margin : 0 0 0 $baseUnit * $times;
+  }

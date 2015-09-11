@@ -1,0 +1,6 @@
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<!--#if expr="$QUERY_STRING = on" -->
+    <style type="text/css">body {background-image: url('img/8px.png')}</style>
+<!--#elif expr="$QUERY_STRING = off"-->
+    <style type="text/css">body {background-image: none}</style>
+<!--#endif -->

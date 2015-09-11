@@ -1,0 +1,21 @@
+/*-- TABS --*/
+
+button[role=tab]{
+padding:1em;
+text-decoration:none;
+border:0px;
+margin-right: 1px!important;
+}
+
+button[role=tab].active { /*--NB! Class--*/
+background-color:$darkGrey;
+color : $yellow;
+}
+
+/*-- If there is a div below the tabs --*/
+/*-- then give it a border --*/
+
+button[role=tab] + div {
+border:solid 1px $darkGrey;
+padding: bordered-button-padding(1px);
+}

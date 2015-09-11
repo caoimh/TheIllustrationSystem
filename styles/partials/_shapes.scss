@@ -1,0 +1,18 @@
+/*-- CIRCLES --*/
+
+@mixin circle($width, $display) {
+  width: $width;
+  height: $width;
+  display : $display;
+  margin : 2em;
+  border : solid 1px $lightGrey;
+  -webkit-border-radius: $width/2;
+     -moz-border-radius: $width/2;
+          border-radius: $width/2;
+}
+    
+    
+.circle {
+  @include circle(5em, inline-block);
+}
+
