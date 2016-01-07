@@ -1,13 +1,10 @@
-/* FORMS */
+/*-- FORMS --*/
 
 legend {
 font-weight: bold;
 }
 
-input[type="checkbox"], 
-input[type="radio"] { 
-box-sizing: border-box; 
-}
+
 
 fieldset {
 margin-bottom: 1em;
@@ -66,13 +63,9 @@ font-size: 1.0em;
 	overflow:visible;
 	display: block;
 	min-height : 3em;
+	border-color : $mediumGrey;
 }
 
-input[type="checkbox"],
-input[type="radio"]
-{
-	box-sizing: border-box;
-}
 input[type="password"]:focus,
 input[type="search"]:focus,
 input[type="url"]:focus,
@@ -130,13 +123,25 @@ display: block;
 }
 
 /*-- MAKE THE LABELS DISPLAY AS INLINES --*/
+
 label input[type="checkbox"], 
 label input[type="radio"] {
-display: inline;
+	display: inline;
+}
+
+label input[type="checkbox"] {
+	margin-right : 0.5em;
+}
+
+/*-- TEXTAREA --*/
+textarea {
+	min-height : 12em;
+	border-color : $red;
 }
 
 
 /*-- STEPPERS --*/
+
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
     cursor:pointer;

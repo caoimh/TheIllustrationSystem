@@ -11,13 +11,6 @@
         box-shadow: $top $left $blur $size $color;
     }
 }
-/* @include box-shadow(1px,1px,1px,0, #ffcc00, true); */
 
-
-/*-- Border Radius--*/
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
+// Usage:
+// @include box-shadow(1px,1px,1px,0, #ffcc00, true);

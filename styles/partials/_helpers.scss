@@ -1,6 +1,14 @@
+/*-- HINTS --*/
+// Hint text for footnotes etc.
+
+.hint {
+	color : $mediumGrey;
+	font-style : italic;
+}
+
 /*-- BLOCK --*/
-/*-- Make things within a container with --*/
-/*-- class 'block' stack as blocks --*/
+// Make things within a container with
+// class 'block' stack as blocks
 
 .block * {
   display : block;
@@ -51,18 +59,21 @@
 
 
 /*-- CLEARFIX --*/
-/*-- Usage: @extend %clearfix; --*/
+// Usage: @extend %clearfix;
 
 %clearfix {
-  &:after {
-    content: "";
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
     display: table;
+  }
+  &:after {
     clear: both;
   }
 }
 
 /*-- BORDERS --*/
-/*-- Make some generic rules for bordered anything --*/
+// Make some generic rules for bordered anything
 
 %border2px {
 	border: 2px solid $darkGrey;

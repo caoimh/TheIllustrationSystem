@@ -1,6 +1,6 @@
 /* COLORS */
-/*-- Declare colors first    --*/
-/*-- then make classes after --*/
+// Declare colors first
+// then make classes after
 
 $white : #ffffff;
 $black : #000;
@@ -13,38 +13,41 @@ $darkYellow : darken($yellow, 10);
 
 
 /*$blue : #0c73ff;*/
-$blue : #007acc;
+/*$blue : #007acc;*/
+$blue : #0055b1;
 $superLightBlue : lighten($blue, 40);
-$lightBlue : lighten($blue, 20);
+$lightBlue : lighten($blue, 30);
 $darkBlue : darken($blue, 20);
 $superDarkBlue : darken($blue, 25);
 
 
 $green : #88d03e;
 $lightGreen : lighten($green, 20);
-$darkGreen : darken($green, 20);
+$superLightGreen : lighten($green, 40);
+$mediumGreen : darken($green, 15);
+$darkGreen : darken($green, 30);
 
 
 $orange : #ff9800;
 $superLightOrange : lighten($orange, 40);
 $lightOrange : lighten($orange, 20);
-$darkOrange : darken($orange, 20);
+$darkOrange : darken($orange, 25);
 
 
 $purple	: #7713e0;
-$lightPurple : lighten($purple, 50);
-$darkPurple : darken($purple, 50);
+$lightPurple : lighten($purple, 30);
+$darkPurple : darken($purple, 20);
 
-
-$pinkPurple	: #bd10e0;
+/*$pinkPurple	: #bd10e0;*/
+$pinkPurple : #950CB1;
 $superLightPinkPurple : lighten($pinkPurple, 45);
 $lightPinkPurple : lighten($pinkPurple, 30);
 $darkPinkPurple : darken($pinkPurple, 20);
 
 
-$redPink : #f2463c;
-$lightRedPink : lighten($redPink, 50);
-$darkRedPink : darken($redPink, 50);
+$redPink : #FF5F57;
+$lightRedPink : lighten($redPink, 20);
+$darkRedPink : darken($redPink, 35);
 
 
 $salmon	: #facfcc;
@@ -53,8 +56,8 @@ $darkSalmon : darken($salmon, 50);
 
 
 $pink : #e11281;
-$lightPink : lighten($pink, 50);
-$darkPink : darken($pink, 50);
+$lightPink : lighten($pink, 20);
+$darkPink : darken($pink, 20);
 
 
 $grey : #ccc;
@@ -64,22 +67,23 @@ $darkLightGrey : #d8d8d8;
 $mediumGrey : #a8a8a8;
 $darkGrey : #585858;
 $superDarkGrey : #383838;
-
+$ultraDarkGrey : darken($superDarkGrey, 15);
 $warmGrey : #e2e2d8;
 $darkWarmGrey : #b7b79e;
 $superDarkWarmGrey : #302f2a;
 
 
 $red : #DD4330;
-$superLightRed : lighten($red, 43);
+/*$red : #B60000;*/
+$superLightRed : lighten($red, 42);
 $lightRed : lighten($red, 35);
 $darkRed : darken($red, 20);
 
 
 $seablue : #50E3C2;
-$lightSeablue : lighten($seablue, 30);
-$mediumSeablue : darken($seablue, 3);
-$darkSeablue : darken($seablue, 50);
+$lightSeablue : lighten($seablue, 20);
+$mediumSeablue : darken($seablue, 20);
+$darkSeablue : darken($seablue, 35);
 
 
 
@@ -110,26 +114,36 @@ $darkSeablue : darken($seablue, 50);
 
 .yellow {
   background-color : $yellow;
-  color : $black;
   border-color: $darkYellow;
   hr {background-color : $darkYellow;}
-    /*p,h1,h2,h3,h4 {color : ;}*/
-    
+  p,h1,h2,h3,h4 {color : $black;}
+  color : $black;    
 }
 
 .lightYellow {
   background-color : $lightYellow;
+  border-color : $mediumYellow;
+  hr {background-color : $mediumYellow;}
+  p,h1,h2,h3,h4 {color : $black;}
   color : $black;
-  border-color : $darkYellow;
-    /*p,h1,h2,h3,h4 {color : ;}*/
 }
 
 .mediumYellow {
   background-color : $mediumYellow;
-  color : $white;
   border-color : $darkYellow;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  hr {background-color : $darkYellow;}
+  p,h1,h2,h3,h4 {color : $black;}
+  color : $black;
 }
+
+.darkYellow {
+  background-color : $darkYellow;
+  border-color : darken($darkYellow, 5);
+  hr {background-color : darken($darkYellow, 10);}
+  p,h1,h2,h3,h4 {color : $black;}
+  color : $black;
+}
+
 .yellowText {color : $yellow};
 .darkYellowText {color : $darkYellow};
 
@@ -141,34 +155,38 @@ $darkSeablue : darken($seablue, 50);
 
 .blue {
   background-color : $blue;
-  color : $superLightBlue;
   border-color : $darkBlue;
   hr {background-color : $darkBlue;}
-  p,h1,h2,h3,h4 {color : $superLightBlue;}
+  p,h1,h2,h3,h4 {color : $white;}
+  color : $white;
 }
 .lightBlue {
   background-color : $lightBlue;
-  color : $superDarkBlue;
-  h1,h2,h3,h4 {color : $superDarkBlue;}
-  p {color : $white;}
+  border-color : $blue;
+  p,h1,h2,h3,h4 {color : $black;}
+  color : $black;
 }
 .superLightBlue {
   background-color : $superLightBlue;
-  color : $darkBlue;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  border-color : $lightBlue;
+  p,h1,h2,h3,h4 {color : $black;}
+  color : $black;
 }
-
 .darkBlue {
   background-color : $darkBlue;
-  color : $lightBlue;
-  p,h1,h2,h3,h4 {color : $lightBlue;}
+  border-color : $superDarkBlue;
+  p,h1,h2,h3,h4 {color : $superLightBlue;}
+  color : $superLightBlue;
 }
 .superDarkBlue {
   background-color : $superDarkBlue;
-  color : $superLightBlue;
+  border-color : darken($superDarkBlue, 10);
   p,h1,h2,h3,h4 {color : $superLightBlue;}
+  color : $superLightBlue;
 }
+.lightBlueText {color : $lightBlue};
 .blueText {color : $blue};
+.darkBlueText {color : $darkBlue};
 
 
 /*
@@ -177,24 +195,43 @@ $darkSeablue : darken($seablue, 50);
 
 .green {
   background-color : $green;
+  border-color : darken($green, 15);
+  hr {background-color : $darkGreen;}
+  p,h1,h2,h3,h4 {color : $black;}
   color : $black;
-  border-color : $darkGreen;
-    /*p,h1,h2,h3,h4 {color : ;}*/
 }
+
+.mediumGreen {
+  background-color : $mediumGreen;
+  border-color : darken($mediumGreen, 10);
+  p,h1,h2,h3,h4 {color : $white;}
+  color : $white;
+}
+
 .darkGreen {
   background-color : $darkGreen;
-  color : $black;
-  border-color : $black;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  border-color : darken( $darkGreen , 10);
+  p,h1,h2,h3,h4 {color : $white;}
+  color : $white;
 }
 .lightGreen {
   background-color : $lightGreen;
-  color : $black;
   border-color : darken($lightGreen, 30);
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  hr {background-color : $green;}
+  p,h1,h2,h3,h4 {color : $black;}
+  color : $black;
+}
+
+.superLightGreen {
+  background-color : $superLightGreen;
+  border-color : darken($superLightGreen, 30);
+  hr {background-color : $lightGreen;}
+  p,h1,h2,h3,h4 {color : $black;}
+  color : $black;
 }
 
 .greenText {color : $green;}
+.mediumGreenText {color : $mediumGreen;}
 .darkGreenText {color : $darkGreen;}
 
 
@@ -204,22 +241,28 @@ $darkSeablue : darken($seablue, 50);
 
 .red {
   background-color : $red;
+  border-color : darken($darkRed, 1);
+  p,h1,h2,h3,h4 {color : $white;}
   color : $white;
-  border-color : $darkRed;
-    /*p,h1,h2,h3,h4 {color : ;}*/
 }
 .lightRed {
   background-color : $lightRed;
+  border-color : lighten($red, 10);
+  p,h1,h2,h3,h4 {color : $black;}
   color : $black;
-  border-color : $darkRed;
-    /*p,h1,h2,h3,h4 {color : ;}*/
 }
-
 .superLightRed {
   background-color : $superLightRed;
+  border-color : darken($superLightRed, 20);
+  hr {background-color : darken($superLightRed, 20);}
+  p,h1,h2,h3,h4 {color : $darkRed;}
   color : $darkRed;
-  border-color : $darkRed;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+}
+.darkRed {
+  background-color : $darkRed;
+  border-color : darken($darkRed, 10);
+  p,h1,h2,h3,h4 {color : $white;}
+  color : $white;
 }
 .redText {color : $red;}
 
@@ -231,71 +274,94 @@ $darkSeablue : darken($seablue, 50);
 
 .superLightGrey {
   background-color : $superLightGrey;
+  border-color : darken($superLightGrey, 20);
+  p,h1,h2,h3,h4 {color : $black;}
   color : $black;
-  border-color : $darkGrey;
-    /*p,h1,h2,h3,h4 {color : ;}*/
 }
 
 .lightGrey {
   background-color : $lightGrey;
+  border-color : darken($lightGrey, 20);
+  //&:hover {border-color : $black}
+  hr {background-color : darken($lightGrey, 10);}
+  p,h1,h2,h3,h4 {color : $black;}
   color : $black;
-  border-color : $grey;
-  &:hover {border-color : $black!important;}
-    /*p,h1,h2,h3,h4 {color : ;}*/
 }
 
 .darkLightGrey {
   background-color : $darkLightGrey;
+  border-color : darken($darkLightGrey, 20);
+  //&:hover {border-color : $black}
+  p,h1,h2,h3,h4 {color : $black;}
   color : $black;
-  border-color : $grey;
-  &:hover {border-color : $black!important;}
-    /*p,h1,h2,h3,h4 {color : ;}*/
 }
 
 .grey {
   background-color : $grey;
+  border-color : darken($grey, 20);
+  p,h1,h2,h3,h4 {color : $black;}
   color : $black;
-  border-color : $darkGrey!important;
-    /*p,h1,h2,h3,h4 {color : ;}*/
 }
 
 .mediumGrey {
   background-color : $mediumGrey;
-  color : $white;
-  border-color : $darkGrey;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  border-color : darken($mediumGrey, 20);
+  p,h1,h2,h3,h4 {color : $black;}
+  color : $black;
 }
 
 .darkGrey {
   background-color : $darkGrey;
+  border-color : darken($darkGrey, 20);
+  p,h1,h2,h3,h4 {color : $white;}
   color : $white;
-  border-color : $darkGrey;
-  p,h1,h2,h3,h4 {color : $grey;}
 }
 
 .superDarkGrey {
   background-color : $superDarkGrey;
+  border-color : darken($superDarkGrey, 20);
+  p,h1,h2,h3,h4 {color : $white;}
   color : $white;
-  border-color : $darkGrey;
-  p,h1,h2,h3,h4 {color : $superDarkWarmGrey;}
+}
+
+.ultraDarkGrey {
+  background-color : $ultraDarkGrey;
+  border-color : darken($ultraDarkGrey, 20);
+  p,h1,h2,h3,h4 {color : $white;}
+  color : $white;
 }
 
 .warmGrey {
   background-color : $warmGrey;
-  color : $white;
-  border-color : $darkWarmGrey;
+  border-color : darken($warmGrey, 20);
   p,h1,h2,h3,h4 {color : $superDarkWarmGrey;}
+   color : $superDarkWarmGrey;
 }
 
-$warmGrey : #e2e2d8;
-$darkWarmGrey : #b7b79e;
-$superDarkWarmGrey : #302f2a;
+
+.darkWarmGrey {
+  background-color : $darkWarmGrey;
+  border-color : darken($darkWarmGrey, 20);
+  p,h1,h2,h3,h4 {color : darken($superDarkWarmGrey, 10);}
+  color : darken($superDarkWarmGrey, 10);
+}
+
+.superDarkWarmGrey {
+  background-color : $superDarkWarmGrey;
+  border-color : darken($superDarkWarmGrey, 20);
+  p,h1,h2,h3,h4 {color : $white;}
+  color : $white;
+}
+//$warmGrey : #e2e2d8;
+//$darkWarmGrey : #b7b79e;
+//$superDarkWarmGrey : #302f2a;
 
 
 
 .greyText {color : $grey;}
 .lightGreyText {color : $lightGrey;}
 .mediumGreyText {color : $mediumGrey;}
+.darkGreyText {color : $darkGrey;}
 
 
 /*
@@ -304,10 +370,27 @@ $superDarkWarmGrey : #302f2a;
 
 .pink {
   background-color : $pink;
-  color : $black;
+  color : $white;
   border-color : $darkPink;
   p,h1,h2,h3,h4 {color : $white;}
 }
+
+.lightPink {
+  background-color : $lightPink;
+  color : $black;
+  border-color : darken($lightPink, 10);
+  p,h1,h2,h3,h4 {color : $black;}
+}
+
+.darkPink {
+  background-color : $darkPink;
+  color : $white;
+  border-color : darken($darkPink, 10);
+  p,h1,h2,h3,h4 {color : $white;}
+}
+
+
+
 .pinkText {color : $pink;}
 .lightPinkText {color : $lightPink;}
 .darkPinkText {color : $darkPink;}
@@ -329,11 +412,25 @@ $superDarkWarmGrey : #302f2a;
 -- R E D P I N K S--
 */
 
+.lightRedPink {
+  background-color : $lightRedPink;
+  border-color : darken($lightRedPink, 10);
+  p,h1,h2,h3,h4 {color : darken($darkRedPink , 30);}
+  color : darken($darkRedPink , 30);
+}
+
 .redPink {
   background-color : $redPink;
+  border-color : darken($redPink, 20);
+  p,h1,h2,h3,h4 {color : $black;}
   color : $black;
-  border-color : $darkRedPink;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+}
+
+.darkRedPink {
+  background-color : $darkRedPink;
+  border-color : darken($darkRedPink, 10);
+  p,h1,h2,h3,h4 {color : lighten($lightRedPink , 20);}
+  color : lighten($lightRedPink , 20);
 }
 
 
@@ -344,35 +441,57 @@ $superDarkWarmGrey : #302f2a;
 
 .pinkPurple {
   background-color : $pinkPurple;
+  border-color : darken($pinkPurple, 20);
+  p,h1,h2,h3,h4 {color : $white;}
   color : $white;
-  border-color : $darkPinkPurple;
-    /*p,h1,h2,h3,h4 {color : ;}*/
 }
 
 .lightPinkPurple {
   background-color : $lightPinkPurple;
-  color : $black;
-  border-color : $darkPinkPurple;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  border-color : darken($lightPinkPurple,20);
+  p,h1,h2,h3,h4 {color : darken($darkPinkPurple, 20);}
+  color : darken($darkPinkPurple, 20);
 }
 
 .superLightPinkPurple  {
   background-color : $superLightPinkPurple;
-  color : $black;
-  border-color : $darkPinkPurple;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  border-color : darken($superLightPinkPurple, 20);
+  p,h1,h2,h3,h4 {color : $darkPinkPurple;}
+  color : $darkPinkPurple;
 }
+
+.darkPinkPurple {
+  background-color : $darkPinkPurple;
+  border-color : darken($darkPinkPurple, 20);
+  p,h1,h2,h3,h4 {color : $white;}
+    color : $white;
+}
+
 
 
 /*
 -- P U R P L E S --
 */
 
+.lightPurple {
+  background-color : $lightPurple;
+  border-color : darken($lightPurple, 20);
+  p,h1,h2,h3,h4 {color : darken($darkPurple, 15);}
+  color : darken($darkPurple, 15);
+}
+
 .purple {
   background-color : $purple;
-  color : $black;
-  border-color : $darkPurple;
-  p,h1,h2,h3,h4 {color : $white;;}
+  border-color : darken($purple, 10);
+  p,h1,h2,h3,h4 {color : $white;}
+  color : $white;
+}
+
+.darkPurple {
+  background-color : $darkPurple;
+  border-color : darken($darkPurple , 10);
+  p,h1,h2,h3,h4 {color : lighten($lightPurple, 10);}
+  color : lighten($lightPurple, 10);
 }
 
 
@@ -383,22 +502,30 @@ $superDarkWarmGrey : #302f2a;
 
 .orange {
   background-color : $orange;
-  color : $black;
-  border-color : $darkOrange;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  border-color : darken($orange, 10);
+  p,h1,h2,h3,h4 {color : $black ;}
+  color : $black ;
 }
+
+.darkOrange {
+  background-color : $darkOrange;
+  border-color : darken($darkOrange,10);
+  p,h1,h2,h3,h4 {color : $white ;}
+  color : $white ;
+}
+
 .lightOrange {
   background-color : $lightOrange;
-  color : $darkOrange;
-  border-color : $darkOrange;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  border-color : darken($lightOrange,15);
+  p,h1,h2,h3,h4 {color : $black ;}
+  color : $black ;
 }
 
 .superLightOrange  {
   background-color : $superLightOrange;
-  color : $darkOrange;
-  border-color : $darkOrange;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  border-color : darken($superLightOrange, 15);
+  p,h1,h2,h3,h4 {color : $black;}
+  color : $black;
 }
 
 /*
@@ -406,11 +533,32 @@ $superDarkWarmGrey : #302f2a;
 */
 
 
+.lightSeablue {
+  background-color : $lightSeablue;
+  border-color : darken($seablue, 10);
+  p,h1,h2,h3,h4 {color : darken($darkSeablue, 15);}
+  color : darken($darkSeablue, 15);
+}
+
 .seablue {
   background-color : $seablue;
-  color : $black;
-  border-color : $darkSeablue;
-    /*p,h1,h2,h3,h4 {color : ;}*/
+  border-color : darken($seablue, 20);
+  p,h1,h2,h3,h4 {color : darken($darkSeablue, 15);}
+  color : darken($darkSeablue, 15);
+}
+
+.mediumSeablue {
+  background-color : $mediumSeablue;
+  border-color : darken($mediumSeablue, 10);
+  p,h1,h2,h3,h4 {color : darken($darkSeablue, 15);}
+  color : darken($darkSeablue, 15);
+}
+
+.darkSeablue {
+  background-color : $darkSeablue;
+  border-color : darken($darkSeablue, 10);
+  p,h1,h2,h3,h4 {color : $lightSeablue ;}
+  color : $lightSeablue;
 }
 
 

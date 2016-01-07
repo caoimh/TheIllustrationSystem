@@ -1,8 +1,9 @@
 /*-- BUTTONS --*/
+
 input[type=submit],
 input[type=reset],
 input[type=button],
-input[type=image], 
+input[type=image],
 button {
 line-height:1em;
 background-color: $grey;
@@ -10,32 +11,38 @@ padding : 1em;
 border : 0;
 vertical-align: middle;
 color : $black;
-border-color : $darkGrey;
+border-color : darken($grey,20);
 text-align : center;
+@include border-radius(0.25em);
 }
+
 
 input[type=reset]:hover,
 input[type=button]:hover,
-input[type=submit]:hover, 
+input[type=submit]:hover,
 input[type=image]:hover,
 button:hover {
-background-color: $darkGrey;
-color: $yellow;
+	border-color : $black;
+	//background-color: darken($mediumGrey,10);
+	background-color : $superDarkGrey;
+	color: $yellow;
+	//@extend .border1px;
 }
 
 input[type=reset]:active,
 input[type=button]:active,
-input[type=submit]:active, 
+input[type=submit]:active,
 input[type=image]:active,
 button:hover {
-background-color: $darkGrey;
-border-color : $black;
-color: $yellow;
+	border-color : $black;
+	//background-color: darken($mediumGrey,10);
+	background-color : $superDarkGrey;
+	color: $yellow;
+		//@extend .border1px;
 }
 
+
 /*-- CLASSED SELECTORS --*/
-
-
 
 /*-- VARIED EMPHASIS--*/
 /*-- BOLD TEXT --*/
@@ -76,25 +83,39 @@ input[type=button]:disabled, .disabled, .disabled:hover {
 
 /*-- PILLGROUPS --*/
 
-/*-- NB! The pillGroup class is for */
-/* the span wrapper of the buttons--*/
+// NB! The pillGroup class is for
+// the span wrapper of the buttons
 
 .pillGroup {
- 	border-width : 1px;
- 	border-style : solid;
-	 display: inline-block;
+	display: inline-block;
+	@include border-radius(0.3125em);
+	// Set the background color to
+	// style the outline color
+	// Example: background-color : darken($grey, 20);
 }
+
+
 
 .pillGroup button, .pillGroup input[type=button] {
 	@extend .border1px;
 	border-top : 0;
 	border-bottom : 0;
 	border-left : 0;
-	border-color : $black;
+	border-right : 0;
+	margin-left : 1px;
+	margin-top : 1px;
+	margin-bottom : 1px;
+	border-radius : 0;
+}
+
+.pillGroup button:first-child {
+ @include border-left-radius(0.25em);
 }
 
 .pillGroup button:last-child {
  border-right : 0px;
+ margin-right : 1px;
+ @include border-right-radius(0.25em);
 }
 
 
@@ -125,7 +146,3 @@ input[type=button]:disabled, .disabled, .disabled:hover {
 button* {
 	line-height : 1em;
 }
-
-
-
-

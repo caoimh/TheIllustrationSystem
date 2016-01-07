@@ -1,3 +1,55 @@
+/*-- MOLECULES --*/
+
+// Cards
+/*--
+<div class="card">
+  <div class="superHeader"><span class="flexChild">todays date</span><button type="button" class="iconButton small"><span class="icon-x"></span></button></div>
+  <hr>
+  <div class="mediaHolder"><img src="../imageBank/van.png" width="100%" alt=""></div>
+  <div class="contentHolder">
+    <a href="" class="header">Header</a>
+    <p class="meta">Meta</p>
+    <p class="description">Description</p>
+  </div>
+  <div class="actionsHolder">actions</div>
+</div>
+--*/
+
+.card {
+  width : 20em;
+  @include paddingTRBL(1);
+  @include marginRBL(2);
+  @extend .lightGrey;
+  @extend .bottom-border2px;
+
+  .superHeader {
+    @include align-items(center);
+    @extend .flex-1-0;
+    @include paddingB(1);
+    color : $mediumGrey;
+  }
+
+  hr {margin-bottom : 1em;}
+
+  .mediaHolder {
+    img {
+      width: 100%;
+      display: block;
+    }
+    @include paddingB(1);
+  }
+
+  .contentHolder {
+    .header {
+      font-size : 2em;
+      line-height: 0.75em;
+      text-decoration: none;
+      color : $darkGrey;
+    }
+    .meta {font-style: italic;margin-bottom : 0;color : $mediumGrey;}
+    .description {@include marginB(1);}
+  }
+}
 
 
 
@@ -5,22 +57,26 @@
   max-width : 100%;
   border-bottom : solid 1px $lightGrey;
   @include paddingTRBL(4);
-  padding-bottom : calc(4em - 1px);
+  padding-bottom : calc(4em);
   @include flexbox;
   @include flex-direction(column);
-  
+
+  p.author {
+  	margin-top : 1em;
+  }
+
   header {
     margin-bottom : 0;
     max-width : 55em;
   }
-  
+
   header p {
     margin-bottom : 0;
     padding : 0;
     min-width : 100%;
     line-height : 1.5em;
   }
-  
+
   .branding {
     @include align-self(flex-end);
     margin-bottom : 2em;
@@ -28,27 +84,63 @@
 }
 
 
+// TEST VERSION OF FLIP
+
+.flipcard {
+  width : 20em;
+  .superHeader {
+    @include align-items(center);
+    @extend .flex-1-0;
+    @include paddingB(1);
+    color : $mediumGrey;
+  }
+
+  hr {margin-bottom : 1em;}
+
+  .mediaHolder {
+    img {
+      width: 100%;
+      display: block;
+    }
+    @include paddingB(1);
+  }
+
+  .contentHolder {
+    .header {
+      font-size : 2em;
+      line-height: 0.75em;
+      text-decoration: none;
+      color : $darkGrey;
+    }
+    .meta {font-style: italic;margin-bottom : 0;color : $mediumGrey;}
+    .description {@include marginB(1);}
+  }
+}
+
+
+// END TEST VERSION OF FLIP
+
 /*-- MEDIA QUERIES --*/
 
 @media all and (max-width: 980px) {
 
     .hero {
-    
+
       .branding {
       /*@include align-self(flex-start);*/
       margin-bottom : 2em;
-      
+
         img { width : 75%; }
-        
+
       }
-      
+
       header h1 {
         font-size : 2em;
       }
-      
+
       header p {
         font-size : 1.5em;
-      }  
+      }
   }
 
 }
@@ -56,7 +148,7 @@
 @media all and (max-width: 400px) {
     .hero {
       padding : 2em;
-      
+
       .branding {@include align-self(flex-start);
         img { width : 50%;}
       }
@@ -84,11 +176,11 @@ nav#main {
 }
 
 .subnav {
-	
-	padding: 0.5em;	
+
+	padding: 0.5em;
 	@include flexbox;
 	align-content : center;
-	
+
 }
 
 @media all and (max-width: 980px) {
@@ -105,11 +197,11 @@ nav#main {
 
 /*-- SEARCH BOX --*/
 
-.searchBox, .searchBoxOptions { 
+.searchBox, .searchBoxOptions {
+align-items: flex-start;
 @extend .flex;
-
 	input[type="text"],input[type="checkbox"],label {
-		display : inline;		
+		display : inline;
 	}
 }
 
@@ -124,27 +216,32 @@ nav#main {
 
 /*-- Stop the input and label wrapping --*/
 span.option {
+	@extend .flex;
 	@extend .noWrap;
-	
 }
 
-.searchBox button {
+.searchBox button, .searchBox input[type=submit] {
   @extend .border1px;
   border-left : 0;
   min-height : 3em;
- /* min-width : 4em!important;*/
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  @extend .green;
 }
+
+
 
 .searchBox p {
   margin-left: 2em;
-  
+
 }
 
 /*-- SEARCH BOX WITH OPTION --*/
 
 .searchBoxOptions span {
 	padding-left : 0.5em;
-	padding-right : 0.5em;
+	/*padding-right : 0.5em;*/
+	padding-bottom : calc(1em - 2px);
 	border : solid 1px $mediumGrey;
 	border-right : 0;
 	line-height : 1.5em;
@@ -152,38 +249,47 @@ span.option {
 
 .searchBoxOptions span label {
 	position : relative;
-	top : 0.625em;		
+	top : 0.625em;
 }
 
-.searchBoxOptions button {
+.searchBoxOptions button, .searchBoxOptions input[type=submit] {
+  @extend .green;
   @extend .border1px;
+  border-left : 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   }
-  
+
+.searchBoxOptions input[type=submit]:focus {
+	//@extend .border4px;
+	border-left : 0;
+	border-right : 1px solid $darkGreen;
+	@extend .green;
+}
+
  .searchBoxOptions span, .searchBoxOptions input,  .searchBoxOptions label {
  	display : inline;
  }
 
 /*-- FLEXBOX CONTAINERS --*/
-/*-- A container with 2 child containers --*/
-/*-- the container on the left has flex: 1 --*/
-/*-- the container on the right has flex : none --*/
+// A container with 2 child containers
+// the container on the left has flex: 1
+// the container on the right has flex : none
 
 /*-- POLITI DIVIDER --*/
 
 .politidiv {
-
 height : 7px;
 background: linear-gradient(
-  135deg,  
+  135deg,
+  $mediumYellow 20%,
   $yellow 20%,
-  $darkBlue 20%,
-  $superDarkBlue 50%
-  /*
-  $pink 20%,
-  $red 20%,
-  $red 50%*/
-);
+  $blue 20%,
+  $darkBlue 50%);
+}
 
+.politidiv:before {
+	content:"\00a0";
 }
 
 /*-- STICKY SIDEBAR --*/
@@ -194,11 +300,11 @@ background: linear-gradient(
   /*-- adjust this based on number of buttons --*/
   /*-- example: 3 buttons = ca. 9em --*/
   /*-- therefore dist from top = 4.5em (half) --*/
-  
+
   top : calc(50%);
   z-index : 999;
-  
-  button {display : block;margin-bottom : 1px;}
+
+  button {display : block;margin-bottom : 1px;border-radius : 0;}
   @extend .iconButton;
 }
 
@@ -255,7 +361,7 @@ background: linear-gradient(
 .flex-1-1-0 .flexChild {flex : 1 0%;}
 .flex-1-1-0 .flexChild:last-child {flex : none;}
 
-.flex-1-0-1 .flexChild {flex : 1;}
+.flex-1-0-1 .flexChild {flex : 1 0%;}
 .flex-1-0-1 .flexChild:nth-child(2n) {flex : none;}
 
 .flex-0-1-1 .flexChild {flex : 1;}
@@ -263,3 +369,55 @@ background: linear-gradient(
 
 
 
+
+/*-- SIDE PANEL --*/
+$panelWidth : 40em;
+$zindex : 100;
+
+//
+// The Panel Container
+//
+
+.cd-panel-container {
+  position: fixed;
+  height: 100%;
+  top: 0em;
+  z-index: $zindex;
+  @include transitionProperty(transform);
+  @include transitionDuration(0.15s);
+  @include transitionDelay(0.15s);
+  // @include paddingRL(2);
+  // Add background in local custom file
+  // EG: background : rgba(34,124,201,0.2);
+}
+
+.from-right .cd-panel-container {
+  right: 0;
+  @include translate3d(37em, 0, 0);
+}
+
+.from-left .cd-panel-container {
+  left: 0;
+  @include translate3d(100%, 0, 0);
+}
+
+.is-visible .cd-panel-container {
+  @include translate3d(0, 0, 0);
+  @include transitionDelay(0s);
+}
+
+//
+// The Panel Content
+//
+
+.cd-panel-content {
+  position: absolute;
+  top: 0em;
+  right: 0;
+  height: 100%;
+  overflow: auto;
+
+  // Add padding to custom stylesheet
+  /* smooth scrolling on touch devices */
+  -webkit-overflow-scrolling: touch;
+}

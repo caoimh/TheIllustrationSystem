@@ -1,36 +1,51 @@
-/*-- PADDINGS --*/
-/*-- Usage example: @include paddingTL(0.5); --*/
-/*-- The 0.5 is multiplied by 16 (i.e 1 $baseUnit) --*/
-/*-- == padding-top:8px, padding-left:8px --*/
+//PADDING CLASSES
+
+.padding0-5em {
+	padding : 1em;
+}
 
 
-/*-- T: Top --*/
-/*-- R: right --*/
-/*-- B: Bottom--*/
-/*-- L: Left--*/
-/*-- 
+.padding1-0em {
+	padding : 1em;
+}
 
-4 sides							TRBL
-3 sides - no top				RBL
-3 sides - no bottom				TRL
-3 sides - no left				TRB
-3 sides - no right				TBL
+.padding2-0em {
+	padding : 2em;
+}
 
-2 sides - no left no right		TB
-2 sides - no top no bottom		RL
-2 sides - no top no left		RB
-2 sides - no bottom no left		TR
-2 sides - no top no right		BL
-2 sides - no bottom no right	TL
 
-1 side - top					T
-1 side - right					R
-1 side - bottom					B
-1 side - left					L
+// PADDINGS
+// Usage example: @include paddingTL(0.5);
+// The 0.5 is multiplied by 16 (i.e 1 $baseUnit)
+// == padding-top:8px, padding-left:8px
 
---*/
+//This might be overkill :/
 
-/* $baseUnit is set in functions.scss */
+
+// T: Top
+// R: right
+// B: Bottom--*/
+// L: Left--*/
+
+
+// 4 sides							TRBL
+// 3 sides - no top					RBL
+// 3 sides - no bottom				TRL
+// 3 sides - no left				TRB
+// 3 sides - no right				TBL
+// 
+// 2 sides - no left no right		TB
+// 2 sides - no top no bottom		RL
+// 2 sides - no top no left			RB
+// 2 sides - no bottom no left		TR
+// 2 sides - no top no right		BL
+// 2 sides - no bottom no right		TL
+// 
+// 1 side - top						T
+// 1 side - right					R
+// 1 side - bottom					B
+// 1 side - left					L
+
 
 @mixin paddify($padding...){
 	padding : $padding;

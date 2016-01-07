@@ -13,6 +13,7 @@ blockquote p {
 blockquote footer {
 	p {color : $mediumGrey; font-size : 1em;}
 	cite {
+		margin-left : 0.5em;
 		color : $mediumGrey;
 		a {color : $blue;}	
 	}

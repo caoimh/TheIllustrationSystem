@@ -1,7 +1,5 @@
-/*-- function for calculating padding with borders --*/
-
-
-
+/*-- BORDERS --*/
+// Function for calculating padding with borders
 
 @function bordered-button-padding ($border-thickness){
 	 @return 1 - ($border-thickness / $base) + em;
@@ -15,16 +13,45 @@
 	 @return 2 - ($border-thickness / $base) + em;
 }
 
-/*-- BUTTONS WITH BORDERS SHOULD HAVE A 2PX --*/  
-/*-- BORDER WHICH ADDS 0.25EM TO THE HEIGHT --*/  
-/*-- AND WIDTH. REDUCE THE HEIGHT BACK TO   --*/  
-/*-- BASELINE METRICS BY REMOVING IT FROM   --*/  
-/*-- THE PADDING --*/
 
-/*-- NB! THIS DOESN'T WORK WELL ON 'INPUT TYPE = BUTTON' --*/ 
+// Buttons with a bottom border
 
-/*-- 16 MINUS BORDER THICKNESS DIVIDED BY 16 = PADDING --*/
-/*-- SASS CALCULATIONS IN STYLE.SCSS --*/
+// 1 pix bottom border
+@function bottom-bordered-button-padding-1 ($border-thickness){
+	 @return 1 - ($border-thickness / $base) + em;
+}
+
+
+.bottom-border1px {
+	border-bottom-style : solid;
+	border-bottom-width : 1px;
+	padding-top: bottom-bordered-button-padding-1(0.5px);
+	padding-bottom: bottom-bordered-button-padding-1(0.5px);
+}
+
+// 2 pix bottom border
+@function bottom-bordered-button-padding-2 ($border-thickness){
+	 @return 1 - ($border-thickness / $base) + em;
+}
+
+
+.bottom-border2px {
+	border-bottom-style : solid;
+	border-bottom-width : 2px;
+	padding-top: bottom-bordered-button-padding-2(1px);
+	padding-bottom: bottom-bordered-button-padding-2(1px);
+}
+
+// BUTTONS WITH BORDERS SHOULD HAVE A 2PX
+// BORDER WHICH ADDS 0.25EM TO THE HEIGHT
+// AND WIDTH. REDUCE THE HEIGHT BACK TO
+// BASELINE METRICS BY REMOVING IT FROM
+// THE PADDING
+
+// NB! THIS DOESN'T WORK WELL ON 'INPUT TYPE = BUTTON'
+
+// 16 MINUS BORDER THICKNESS DIVIDED BY 16 = PADDING
+// SASS CALCULATIONS IN STYLE.SCSS
 
 .border0px {
 	border-style : solid;
@@ -65,6 +92,7 @@
 }
 
 
+
 .small.border1px {
 	padding: small-bordered-button-padding(1px);
 }
@@ -93,3 +121,67 @@
 .large.border8px {
   padding: large-bordered-button-padding(8px);
 }
+
+/*-- Border Radius--*/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Usage:
+// @include border-radius(top left, top right, bottom right, bottom left);
+
+// Or with vendors mixin (located in _vendors.scss):
+// @include vendor-prefixes(border-radius, $radius);
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  @include vendor-prefixes(border-radius, $radius);
+}
+
+
+// Individual corners
+
+// Top border radius
+@mixin border-top-radius($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+// Usage:
+// @include border-top-radius(5px);
+
+
+// Left border radius
+@mixin border-left-radius($radius) {
+	border-bottom-left-radius: $radius;
+	border-top-left-radius: $radius;
+	@include vendor-prefixes(border-left-radius, $radius);
+}
+
+// Usage
+// @include border-left-radius(5px);
+
+// Bottom border radius
+@mixin border-bottom-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+	@include vendor-prefixes(border-bottom-radius, $radius);
+}
+
+// Usage:
+// @include border-bottom-radius(5px);
+
+// Right border radius
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+	@include vendor-prefixes(border-right-radius, $radius);
+}
+
+// Usage
+// @include border-right-radius(5px);

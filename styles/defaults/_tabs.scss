@@ -5,6 +5,8 @@ padding:1em;
 text-decoration:none;
 border:0px;
 margin-right: 1px!important;
+border-bottom-right-radius : 0;
+border-bottom-left-radius : 0;
 }
 
 button[role=tab].active { /*--NB! Class--*/
@@ -12,8 +14,8 @@ background-color:$darkGrey;
 color : $yellow;
 }
 
-/*-- If there is a div below the tabs --*/
-/*-- then give it a border --*/
+// If there is a div below the tabs --*/
+// then give it a border --*/
 
 button[role=tab] + div {
 border:solid 1px $darkGrey;
