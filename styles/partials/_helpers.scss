@@ -1,63 +1,3 @@
-/*-- HINTS --*/
-// Hint text for footnotes etc.
-
-.hint {
-	color : $mediumGrey;
-	font-style : italic;
-}
-
-/*-- BLOCK --*/
-// Make things within a container with
-// class 'block' stack as blocks
-
-.block * {
-  display : block;
-}
-
-
-/*-- FLOATS AND CLEARS --*/
-
-.floatLeft {
-  float : left;
-}
-
-.floatRight {
-  float : right;
-}
-
-.pc50 {
-	width: 50%;
-	float: left;
-}
-
-/*-- STRIPPERS --*/
-
-.noPadding {
-  padding : 0!important;
-}
-
-.noMargin {
-  margin : 0;
-}
-
-/*-- TEXT ALIGN --*/
-
-.textRight {
-  text-align: right;
-}
-
-
-.textLeft {
-  text-align: left;
-}
-
-/*-- WHITE SPACE --*/
-
-.noWrap {
-  white-space : nowrap;
-}
-
-
 /*-- CLEARFIX --*/
 // Usage: @extend %clearfix;
 
@@ -70,12 +10,4 @@
   &:after {
     clear: both;
   }
-}
-
-/*-- BORDERS --*/
-// Make some generic rules for bordered anything
-
-%border2px {
-	border: 2px solid $darkGrey;
-	padding: bordered-button-padding(2px); /*-- 0.875em --*/
 }

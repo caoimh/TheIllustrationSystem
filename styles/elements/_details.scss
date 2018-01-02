@@ -1,0 +1,32 @@
+/* DETAILS */
+
+// GIVE EVERYTHING INSIDE THE DETAILS 1EM PADDING
+
+details {
+  margin-bottom: 1em;
+  padding-bottom: 0;
+
+  div {
+      border-top: solid 1px #ccc;
+      padding: 1em;
+    }
+}
+
+
+summary {
+  padding: 0.625em;
+  font-size: 1em;
+  line-height: 1.5em;
+
+    span {
+	  float: right;
+	  color:#ccc;
+	  font-size: 1em;
+	}
+}
+
+
+details::-webkit-details-marker,
+summary::-webkit-details-marker {
+  color : #ccc;
+}

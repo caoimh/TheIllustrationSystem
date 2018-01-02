@@ -1,6 +1,39 @@
-@import 'partials/all';
 @import 'normalise/all';
-@import 'defaults/all';
-@import 'vendors/all';
-@import 'mediaQueries/all';
-@import 'molecules/all';
+/*
+CSS to normalise them all
+*/
+
+@import 'modules/all';
+/*
+CSS ....
+*/
+
+@import 'variables/all';
+/*
+Colors, Units etc
+*/
+
+@import 'partials/all';
+/*
+Stuff
+*/
+
+@import 'elements/all';
+/*
+Basic HTML elements
+*/
+
+@import 'components/all';
+/*
+CSS
+*/
+
+//@import 'vendors/all';
+/*
+CSS from plugins etc
+*/
+
+@import 'custom/all';
+/*
+Your new CSS - selectors & overrides
+*/

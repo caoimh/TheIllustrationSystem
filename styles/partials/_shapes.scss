@@ -1,5 +1,4 @@
 /*-- CIRCLES --*/
-
 @mixin circle($width, $display) {
   width: $width;
   height: $width;
@@ -9,11 +8,9 @@
      -moz-border-radius: $width/2;
           border-radius: $width/2;
 }
-    
 
-// USAGE:   
+// USAGE:
 //
 //.circle {
 //  @include circle(5em, inline-block);
 //	}
-

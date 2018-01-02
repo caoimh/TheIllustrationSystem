@@ -1,0 +1,29 @@
+/*-- BLOCKQUOTE --*/
+
+blockquote {
+  margin: 2em 2em 0.5em 2em;
+}
+
+blockquote p {
+	font-size: 2em;
+	font-style: italic;
+	margin-bottom: 1em;
+}
+
+blockquote footer {
+  margin-bottom : 4em;
+
+  p {
+    color: #ccc;
+    font-size: 1em;
+  }
+
+	cite {
+		margin-left: 0.5em;
+		color: #ccc;
+
+		a {
+      color: blue;
+    }
+	}
+}

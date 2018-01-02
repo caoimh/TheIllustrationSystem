@@ -1,0 +1,97 @@
+/*-- TABLES --*/
+
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 4em;
+}
+
+caption,thead,tfoot {
+	font-weight: bold;
+}
+
+thead th a,
+tfoot th a {
+	text-decoration: none;
+}
+
+caption {
+	padding:1em;
+	text-align: left;
+	font-weight: normal;
+	background-color: #ccc;
+}
+
+thead {
+	background-color: #ccc;
+	border-bottom: 1px solid #666;
+	/*display :  none;*/
+}
+
+tfoot {
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #ddd;
+}
+
+tfoot th {
+	padding-bottom: 0.5em;
+}
+
+
+tr:last-child {
+	border-bottom: 0;
+}
+
+th {
+    color: black;
+    font-weight: bold;
+    padding: 0.4375em 1em;
+    font-weight: bold;
+    border-top: 1px solid #d8d8d8;
+}
+td, th {
+    font-size: 1em;
+    text-align: left;
+}
+
+td {
+	padding: .4375em 1em 0.5em 1em;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	line-height: 1.5em;
+	/*-- V --*/
+	background-color: #fff;
+}
+
+td:last-child {
+  border-right : none;
+}
+
+
+/* Condensed tables*/
+table.condensed {
+	font-size: 0.875em;
+}
+
+table.condensed caption{
+	padding: 0.5em;
+}
+
+table.condensed td,
+table.condensed th {
+    padding: 0.25em 0.5em;
+    text-align: left;
+    height: 1.5em;
+}
+
+/* Zebra striping */
+
+
+table.zebra tbody tr:nth-child(odd) td {
+  background: lighten(#ddd , 5);
+}
+
+table.zebra tr {
+  border : 0;
+}

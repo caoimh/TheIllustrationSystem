@@ -1,0 +1,17 @@
+/*-- LISTS --*/
+
+ol,
+ul {
+  margin: 0 0 2em 2em;
+}
+
+
+ol li,
+ul li {
+  margin: 0 0 0.5em 0.5em;
+}
+
+
+.noBullet li {
+	list-style : none;
+}

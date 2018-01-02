@@ -1,0 +1,224 @@
+//--------------//
+// ABB card deck
+//--------------//
+
+.abbCardDeck {
+// Init
+  @include flexbox;
+
+// Structuring & laying out
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  padding: 0 1em;
+  margin: auto;
+
+// Styling
+  overflow : hidden;
+}
+
+
+//--------------//
+// ABB card wrapper
+//--------------//
+
+.abbCardWrapper {
+
+// Init
+  display : flex;
+
+// Structuring & laying out
+  @include flex-direction(column);
+  @include flex(1);
+//@include justify-content(space-between);
+  padding : 1em;
+  margin: 0 1em 1em 0;
+
+// Styling
+  @include border-radius(0.5em);
+  @include box-shadow(0px,2px,4px,1px, rgba(0,0,0,0.175), false);
+  background-color: #f0f0f0;
+  font-family: "ABBvoiceLt";
+  overflow : hidden;
+  text-align: center;
+}
+
+//--------------//
+// ABB card head
+//--------------//
+
+.abbCard-head {
+// Init
+  @include flexbox;
+
+// Structuring & laying out
+  @include justify-content(space-between);
+  padding: 0em 0em 1em 0em;
+
+  .titleHolder {
+
+    h4 {
+      font-size: 0.875em;
+      text-transform: none;
+      padding: 0;
+      margin: 0;
+      font-family: 'ABBvoiceMd';
+
+      span.type {
+        font-family: 'ABBvoiceRg';
+        padding-left: 1em;
+      }
+
+      span.state {
+
+      }
+    }
+  }
+
+  .dayNightHolder {
+  }
+}
+
+//--------------//
+// ABB card
+//--------------//
+
+.abbCard {
+  // Init
+  @include flexbox;
+
+  // Structuring & laying out
+  @include flex-direction(column);
+
+
+  // Styling
+  background-color: #f9f9f9;
+  @include border-radius(0.5em);
+  @include box-shadow(0px,2px,4px,1px, rgba(0,0,0,0.175), false);
+}
+
+
+.displayBox {
+// Structuring & laying out
+  padding: 1em;
+  border-bottom: 1px solid #d8d8d8;
+// Styling
+  background-color: #fff;
+  text-align: center;
+  @include border-top-radius(0.5em);
+
+  button, select {
+    margin: auto;
+  }
+}
+
+
+.controlPanel {
+// Structuring & laying out
+  padding: 0.5em;
+  border-bottom: 1px solid #d8d8d8;
+// margin-bottom : 0.5em;
+//.controlPanel > .tabs > a
+//
+
+
+// Styling
+  font-size: 0.875em;
+  background-color: #f5f5f5;
+
+  a[role=tab] {
+  // Structuring & laying out
+  padding: 0;
+  margin: 0 1em;
+  position: relative;
+  // Styling
+  text-transform: uppercase;
+  font-size: 0.875em;
+  color : #909090;
+  }
+
+  a.active.pointer::before {
+    content:"|";
+    display:block;
+    position:absolute;
+
+    left:50%;
+    top: 1.5em;
+    z-index:1000;
+  }
+
+
+  a.active {
+    // Structuring & laying out
+    font-family: 'ABBvoiceMd';
+    color: #000;
+    // Styling
+  }
+}
+
+
+
+.detailsHolder {
+  // Structuring & laying out
+  padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+// Nested
+
+.detailsHolder .abbCard .detailsHolder {
+  padding: 0;
+  padding-bottom: 0.5em;
+}
+
+.detailsHolder .abbCard {
+  border: solid 1px #000;
+}
+
+.detailsHolder .abbCard .controlPanel a.active::before  {
+    content:" ";
+    display:block;
+    position:absolute;
+
+    left:50%;
+    top: 1.5em;
+    z-index:1000;
+
+}
+
+
+
+.actionsHolder {
+  // Structuring & laying out
+  @include flexbox();
+  margin-top: 1em;
+  // this puts it at the bottom of the
+  // card:
+  flex : 1 0 auto;
+  @include flex-direction(column);
+  @include justify-content(flex-end);
+}
+
+// Nested card in the detailsHolder:
+
+.detailsHolder > .abbCard {
+  // Styling
+  background-color: #fefefe;
+  border: solid 1px #ccc;
+}
+
+
+.detailsHolder > .abbCard >.controlPanel {
+  // Styling
+  background-color: #ff0000;
+}
+
+.detailsHolder > .abbCard >.detailsHolder {
+
+  // Styling
+  @include border-bottom-radius(0.5em);
+  //background-color: #ff00cc;
+}
+
+.frontside .detailsHolder {
+  @include border-bottom-radius(0.5em);
+  background-color: #fefefe;
+}
