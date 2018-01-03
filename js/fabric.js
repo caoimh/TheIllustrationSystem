@@ -12081,7 +12081,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
      * @type String
      * @default
      */
-    borderColor:              'rgba(102,153,255,0.75)',
+    borderColor:              'rgba(0,0,0,0.25)',
 
     /**
      * Array specifying dash pattern of an object's borders (hasBorder must be true)
@@ -12095,7 +12095,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
      * @type String
      * @default
      */
-    cornerColor:              'rgba(102,153,255,0.5)',
+    cornerColor:              'rgba(0,0,0,0.25)',
 
     /**
      * Color of controlling corners of an object (when it's active and transparentCorners false)
@@ -12144,7 +12144,7 @@ fabric.util.object.extend(fabric.StaticCanvas.prototype, /** @lends fabric.Stati
      * @type String
      * @default
      */
-    fill:                     'rgb(0,0,0)',
+    fill:                     'rgb(0,0,0,0.25)',
 
     /**
      * Fill rule used to fill an object
@@ -14908,29 +14908,34 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
         ctx.strokeStyle = this.cornerStrokeColor;
       }
       this._setLineDash(ctx, this.cornerDashArray, null);
-
+/*
       // top-left
       this._drawControl('tl', ctx, methodName,
         left,
         top);
-
+*/
+/*
       // top-right
       this._drawControl('tr', ctx, methodName,
         left + width,
         top);
-
+*/
+/*
       // bottom-left
       this._drawControl('bl', ctx, methodName,
         left,
         top + height);
-
+*/
+/*
       // bottom-right
       this._drawControl('br', ctx, methodName,
         left + width,
         top + height);
+*/
 
       if (!this.get('lockUniScaling')) {
 
+/*
         // middle-top
         this._drawControl('mt', ctx, methodName,
           left + width / 2,
@@ -14950,13 +14955,16 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
         this._drawControl('ml', ctx, methodName,
           left,
           top + height / 2);
+*/
       }
 
       // middle-top-rotate
       if (this.hasRotatingPoint) {
+
         this._drawControl('mtr', ctx, methodName,
           left + width / 2,
           top - this.rotatingPointOffset);
+
       }
 
       ctx.restore();

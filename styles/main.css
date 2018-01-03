@@ -1285,8 +1285,7 @@ CSS from plugins etc
 /*-- Setup your structure here --*/
 section {
   max-width: 64em;
-  margin-left: auto;
-  padding: 2em; }
+  margin-left: auto; }
 
 .pillGroup {
   background-color: #000; }
@@ -1296,6 +1295,14 @@ section {
 
 .red {
   background-color: red; }
+
+.controlPanel {
+  border: 0;
+  display: block; }
+
+p {
+  line-height: 1em;
+  font-size: 1em; }
 
 /*
 Your new CSS - selectors & overrides

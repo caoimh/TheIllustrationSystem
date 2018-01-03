@@ -3,10 +3,16 @@
 <!--#include virtual="includes/meta.shtml" -->
 <!--#include virtual="includes/title.shtml" -->
 <link rel="stylesheet" href="styles/main.css">
+
 <style>
+body, html {
+  background-image: url('images/bg-16px-grey.png');
+  background-repeat: repeat;
+}
+
 .section-canvas {
   width: 449px;
-  background-color: #efefef;
+  background: transparent;
   margin: auto;
 }
 
@@ -23,22 +29,17 @@
 <!--#include virtual="includes/bodystart.shtml" -->
 <!--#include virtual="includes/browsehappy.shtml" -->
 <!-- Controls control -->
-<button class="ctrls">CTRL</button>
-<div class="controlPanel">
-  <button>
-    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
-      <path fill="none" stroke="#FF7300" stroke-width="3" d="M10,2 C5.581722,2 2,5.581722 2,10" stroke-linecap="round"/>
-    </svg>
-  </button>
-</div>
-
-
 
 
 
 <section class="section-canvas">
-  <canvas id="c" height="449" width="449"></canvas>
+  <canvas id="c" height="448" width="448" style="margin-top: -1px;"></canvas>
 </section>
+<span class="controlPanel"></span>
+<button class="ctrls"></button>
+<button class="remover">Remover</button>
+<input type="button" id="saveBtn" value="save" onclick="do_save()"></input>
+<div id='dwn'></div>
 
 <!--#include virtual="includes/basescripts.shtml" -->
 <!--#include virtual="includes/bodystop.shtml" -->

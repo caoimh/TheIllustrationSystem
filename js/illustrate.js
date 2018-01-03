@@ -3,6 +3,16 @@ var grid = 16;
 var j, dot;
 var tots = 10;
 var ctrls = false;
+var stroke4 = 16;
+fabric.Object.prototype.set({
+    snapThreshold: 45,
+    snapAngle: 90,
+    lockScalingX: true,
+    lockScalingY: true,
+    hasBorders: true,
+    transparentCorners: true
+});
+
 
 
 var controlPanel = document.querySelector('.controlPanel');
@@ -36,98 +46,71 @@ init();
 var controlPanel = document.querySelector('.controlPanel');
 
 var shapes = {
-  "id1": {
-     "class": "curve_small_top_left",
-     "path": "M104,90c-8.8,0-16,7.2-16,16",
-     "hasControls": "ctrls",
-     "stroke": "#FF8F00",
-     "originX": "left",
-     "originY": "top",
-     "strokeLineCap": "round",
-     "strokeWidth": "strokeWidth",
-     "strokeThickness": 16,
-     "fill": 0,
-     "opacity": 0.7
-  },
-  "id2": {
-     "class": "curve_small_top_right",
-     "path": "M216,90c8.8,0,16,7.2,16,16",
-     "hasControls": "ctrls",
-     "stroke": "#FF8F00",
-     "originX": "left",
-     "originY": "top",
-     "strokeLineCap": "round",
-     "strokeWidth": "strokeWidth",
-     "strokeThickness": 16,
-     "fill": 0,
-     "opacity": 0.7
-  },
-  "id3": {
-     "class": "curve_small_top_right",
-     "path": "M104,170c-8.8,0-16-7.2-16-16",
-     "hasControls": "ctrls",
-     "stroke": "#FF8F00",
-     "originX": "left",
-     "originY": "top",
-     "strokeLineCap": "round",
-     "strokeWidth": "strokeWidth",
-     "strokeThickness": 16,
-     "fill": 0,
-     "opacity": 0.7
-  },
-  "id4": {
-     "class": "curve_small_top_right",
-     "path": "M224,166c8.8,0,16-7.2,16-16",
-     "hasControls": "ctrls",
-     "stroke": "#FF8F00",
-     "originX": "left",
-     "originY": "top",
-     "strokeLineCap": "round",
-     "strokeWidth": "strokeWidth",
-     "strokeThickness": 16,
-     "fill": 0,
-     "opacity": 0.7
-  },
-  "id5": {
-     "class": "curve_small_top_right",
-     "path": "M222,178c-17.7,0-32,14.3-32,32",
-     "hasControls": "ctrls",
-     "stroke": "#FF8F00",
-     "originX": "left",
-     "originY": "top",
-     "strokeLineCap": "round",
-     "strokeWidth": "strokeWidth",
-     "strokeThickness": 16,
-     "fill": 0,
-     "opacity": 0.7
-  },
-  "id6": {
-     "class": "curve_medium_top_right",
-     "path": "M238,178c17.7,0,32,14.3,32,32",
-     "hasControls": "ctrls",
-     "stroke": "#FF8F00",
-     "originX": "left",
-     "originY": "top",
-     "strokeLineCap": "round",
-     "strokeWidth": "strokeWidth",
-     "strokeThickness": 16,
-     "fill": 0,
-     "opacity": 0.7
-  },
-  "id7": {
-     "class": "curve_medium_bottom_left",
-     "path": "M222,258c-17.7,0-32-14.3-32-32",
-     "hasControls": "ctrls",
-     "stroke": "#FF8F00",
-     "originX": "left",
-     "originY": "top",
-     "strokeLineCap": "round",
-     "strokeWidth": "strokeWidth",
-     "strokeThickness": 16,
-     "fill": 0,
-     "opacity": 0.7
-  }
-
+   "id1": {
+      "class": "curve_small_top_left",
+      "path": "M104,90c-8.8,0-16,7.2-16,16",
+      "hasControls": "ctrls",
+      "stroke": "#FF8F00",
+      "originX": "left",
+      "originY": "top",
+      "strokeLineCap": "round",
+      "strokeWidth": "strokeWidth",
+      "strokeThickness": 16,
+      "fill": 0,
+      "opacity": 0.7
+   },
+   "id2": {
+      "class": "curve_small_top_right",
+      "path": "M104,90c-8.8,0-16,7.2-16,16",
+      "hasControls": "ctrls",
+      "stroke": "#0066cc",
+      "originX": "left",
+      "originY": "top",
+      "strokeLineCap": "round",
+      "strokeWidth": "strokeWidth",
+      "strokeThickness": 16,
+      "fill": 0,
+      "opacity": 0.7
+   },
+   "id3": {
+      "class": "circle_semi_open_small",
+      "path": "M18,10 C18,5.581722 14.418278,2 10,2 C5.581722,2 2,5.581722 2,10",
+      "hasControls": "ctrls",
+      "stroke": "#FF8F00",
+      "originX": "left",
+      "originY": "top",
+      "strokeLineCap": "round",
+      "strokeWidth": "strokeWidth",
+      "strokeThickness": 16,
+      "fill": 0,
+      "opacity": 0.7
+   },
+   "id4": {
+      "class": "circle_semi_open_medium",
+      "path": "M34,18 C34,9.163444 26.836556,2 18,2 C9.163444,2 2,9.163444 2,18",
+      "hasControls": "ctrls",
+      "stroke": "#FF8F00",
+      "originX": "left",
+      "originY": "top",
+      "strokeLineCap": "round",
+      "strokeWidth": "strokeWidth",
+      "strokeThickness": 16,
+      "fill": 0,
+      "opacity": 0.7
+   },
+   "id5": {
+      "class": "circle_semi_open_large",
+      "path": "M66,34 C66,16.326888 51.673112,2 34,2 C16.326888,2 2,16.326888 2,34",
+      "hasControls": "ctrls",
+      "stroke": "#FF8F00",
+      "originX": "left",
+      "originY": "top",
+      "strokeLineCap": "round",
+      "strokeWidth": "strokeWidth",
+      "strokeThickness": 16,
+      "fill": 0,
+      "opacity": 0.7
+   }
 }
 
 
@@ -138,13 +121,13 @@ for (var curve in shapes){
     curvevalues = shapes[curve];
     var butt =  document.createElement('button');
     butt.setAttribute('data-id',[curve]);
-    butt.innerHTML = shapes[curve].class;
+    //butt.innerHTML = shapes[curve].class;
     var k = [curve];
     controlPanel.parentNode.insertBefore(butt, controlPanel.nextSibling);
     var thisClass = shapes[curve].class;
     var thisParameter = shapes[curve];
-
   }
+
   butt.addEventListener('click', function(){
     var thisId = this.getAttribute('data-id');
     var thisClass = shapes[thisId].class;
@@ -166,7 +149,6 @@ for (var curve in shapes){
 
     //console.log(thisParameter.left);
     canvas.add(thisClass);
-
   });
 }
 
@@ -181,9 +163,10 @@ var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 var centerWidth = canvasWidth/2;
 var centerHeight = canvasHeight/2;
-for (var i = 0; i < (canvasWidth / grid); i++) {
-  canvas.add(new fabric.Line([ i * grid, 0, i * grid, canvasWidth], { stroke: '#ccc', selectable: false }));
-  canvas.add(new fabric.Line([ 0, i * grid, canvasWidth, i * grid], { stroke: '#ccc', selectable: false }));
+
+for (var i = 1; i < (canvasWidth / grid); i++) {
+  canvas.add(new fabric.Line([ i * grid, 0, i * grid, canvasWidth], { stroke: '#e6e7e8', selectable: false }));
+  canvas.add(new fabric.Line([ 0, i * grid, canvasWidth, i * grid], { stroke: '#e6e7e8', selectable: false }));
 }
 
 
@@ -194,4 +177,22 @@ canvas.on('object:moving', function(options) {
     left: Math.round(options.target.left / grid) * grid,
     top: Math.round(options.target.top / grid) * grid
   });
+});
+
+//fabric.log('Normal SVG output: ', canvas.toSVG());
+// Save SVG
+function do_save() {
+  var filedata= canvas.toSVG(); // the SVG file is now in filedata
+
+  var locfile = new Blob([filedata], {type: "image/svg+xml;charset=utf-8"});
+  var locfilesrc = URL.createObjectURL(locfile);//mylocfile);
+
+  var dwn = document.getElementById('dwn');
+  dwn.innerHTML = "<a href=" + locfilesrc + " download='mysvg.svg'>Download</a>";
+}
+
+// removing objects
+var remover = document.querySelector('.remover');
+remover.addEventListener('click', function(){
+  canvas.remove(canvas.getActiveObject());
 });
