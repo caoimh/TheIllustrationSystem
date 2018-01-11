@@ -16,22 +16,22 @@ fabric.Object.prototype.set({
     hasBorders: true,
     transparentCorners: true
 });
-/*
+
 var stroke4px = document.querySelector('.stroke-4px');
 var stroke8px = document.querySelector('.stroke-8px');
 var stroke16px = document.querySelector('.stroke-16px');
-*/
+
 var opacity1 = document.querySelector('.opacity1');
 var opacity05 = document.querySelector('.opacity05');
 
 
-/*
+
 var grid4 = document.querySelector('.grid4');
 var grid8 = document.querySelector('.grid8');
 var grid16 = document.querySelector('.grid16');
-*/
 
-/*
+
+
 stroke4px.addEventListener('click', function(){
   strokeSize = 4;
   grid = 4;
@@ -47,7 +47,7 @@ stroke16px.addEventListener('click', function(){
   grid = 16;
   console.log(strokeSize);
 });
-*/
+
 opacity1.addEventListener('click', function(){
   opacity = 1;
   console.log(opacity);
@@ -87,6 +87,7 @@ showControls();
 
 var shapes = {
   "id1": {
+    "fabricType" : "path",
     "shapeSize" : "S",
     "shapeType" : "circle-quart-closed",
     "class": "circle-quart-closed-small",
@@ -107,6 +108,7 @@ var shapes = {
     "opacity": opacity
   },
   "id2": {
+    "fabricType" : "path",
     "shapeSize" : "M",
     "shapeType" : "",
     "class": "circle-quart-closed-medium",
@@ -127,6 +129,7 @@ var shapes = {
     "opacity": opacity
   },
   "id3": {
+    "fabricType" : "path",
     "shapeSize" : "L",
     "shapeType" : "",
     "class": "circle-quart-closed-large",
@@ -147,6 +150,7 @@ var shapes = {
     "opacity": opacity
   },
   "id4": {
+    "fabricType" : "path",
     "shapeSize" : "S",
     "shapeType" : "circle-quart-half-closed",
     "class": "circle-quart-half-closed-small",
@@ -167,6 +171,7 @@ var shapes = {
     "opacity": opacity
   },
   "id5": {
+    "fabricType" : "path",
     "shapeSize" : "M",
     "shapeType" : "",
     "class": "circle-quart-half-closed-medium",
@@ -187,6 +192,7 @@ var shapes = {
     "opacity": opacity
   },
   "id6": {
+    "fabricType" : "path",
     "shapeSize" : "L",
     "shapeType" : "",
     "class": "circle-quart-half-closed-large",
@@ -207,6 +213,7 @@ var shapes = {
     "opacity": opacity
   },
   "id7": {
+    "fabricType" : "path",
     "shapeSize" : "S",
     "shapeType" : "circle-semi-closed",
     "class": "circle-semi-closed-small",
@@ -227,6 +234,7 @@ var shapes = {
     "opacity": opacity
   },
   "id8": {
+    "fabricType" : "path",
     "shapeSize" : "M",
     "shapeType" : "",
     "class": "circle-semi-closed-medium",
@@ -247,6 +255,7 @@ var shapes = {
     "opacity": opacity
   },
   "id9": {
+    "fabricType" : "circle",
     "shapeSize" : "L",
     "shapeType" : "",
     "class": "circle-large",
@@ -291,6 +300,7 @@ counter += 1;
     butt.innerHTML =shapes[curve].shapeSize;
     var k = [curve];
     var shapeType = shapes[curve].shapeType;
+
     var breaker =  document.createElement('br');
 
     var shapeTypeDiv =  document.createElement('div');
@@ -298,7 +308,6 @@ counter += 1;
 
     var illus =  document.createElement('img');
         illus.src = "svg/" + shapeType + "-small" + ".svg";
-        console.log(illus.src);
 
     var shapeType = shapes[curve].shapeType;
         shapeTypeDiv.innerHTML = shapeType;
@@ -320,24 +329,43 @@ counter += 1;
     var thisId = this.getAttribute('data-id');
     var thisClass = shapes[thisId].class;
     var thisParameter = shapes[thisId];
-    thisClass  = new fabric.Path("''" + shapes[thisId].path + "''");
+    var thisFabricType = shapes[thisId].fabricType;
+    console.log(thisFabricType);
+    if(thisFabricType == "path"){
+      thisClass  = new fabric.Path("''" + shapes[thisId].path + "''");
+      thisClass.set({
+        shapeSize : thisParameter.shapeSize,
+        left: centerWidth - 1,
+        top: centerHeight - 1,
+        hasControls : ctrls,
+        stroke : thisParameter.stroke,
+        originX: thisParameter.originX,
+        originY: thisParameter.originY,
+        strokeLineCap : thisParameter.strokeLineCap,
+        strokeWidth : strokeSize,
+        fill : 0,
+        opacity : opacity
+      });
+    } else if (thisFabricType == "circle"){
+      thisClass  = new fabric.Circle();
+      thisClass.set({
+        shapeSize : thisParameter.shapeSize,
+        left: centerWidth - 1,
+        top: centerHeight - 1,
+        hasControls : ctrls,
+        stroke : thisParameter.stroke,
+        originX: thisParameter.originX,
+        originY: thisParameter.originY,
+        radius: thisParameter.radius,
+        cx : thisParameter.cx,
+        cy : thisParameter.cy,
+        strokeLineCap : thisParameter.strokeLineCap,
+        strokeWidth : strokeSize,
+        fill : 0,
+        opacity : opacity
+      });
+    }
 
-    thisClass.set({
-      shapeSize : thisParameter.shapeSize,
-      left: centerWidth - 1,
-      top: centerHeight - 1,
-      hasControls : ctrls,
-      stroke : thisParameter.stroke,
-      originX: thisParameter.originX,
-      originY: thisParameter.originY,
-      radius: thisParameter.radius,
-      cx : thisParameter.cx,
-      cy : thisParameter.cy,
-      strokeLineCap : thisParameter.strokeLineCap,
-      strokeWidth : strokeSize,
-      fill : 0,
-      opacity : opacity
-    });
 
     //console.log(thisClass);
     canvas.add(thisClass);

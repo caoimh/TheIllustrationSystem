@@ -13,11 +13,11 @@
   <!--<button class="ctrls">C</button>-->
   <button class="opacity1">OP-1</button>
   <button class="opacity05">OP-0.5</button>
-<!--
+
   <button class="stroke-4px">4</button>
   <button class="stroke-8px">8</button>
   <button class="stroke-16px">16</button>
--->
+
   <button class="remover">R</button>
   <input type="button" id="saveBtn" value="S+D" onclick="do_save()"></input>
   <span id='dwn'></span>
