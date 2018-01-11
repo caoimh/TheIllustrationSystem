@@ -1,8 +1,58 @@
 /*-- Setup your structure here --*/
+body, html {
+  background-color: #232323;
+}
+* {
+    font-family: 'Inconsolata-Regular'!important;
+}
+
+.div-canvas {
+  width: 449px;
+  background: #000;
+  margin: auto;
+}
+
+#c {
+  text-align: center;
+  padding: 0;
+  margin: auto;
+}
+
+.hideMe {
+  display: none;
+}
+
+.tag {
+  min-width: 32px;
+  display: inline-block;
+}
+
+.dwn {
+  background-color: #ccc;
+  border: solid 1px #333;
+}
+
+button,
+a,
+input[type = "button"] {
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #000;
+  color: #8BFFB2;
+  line-height: 1em;
+}
+
+button:hover,
+a:hover,
+input[type = "button"]:hover {
+  background-color: #8BFFB2;
+  color: #000;
+}
 
 section {
-  max-width: 64em;
-  margin-left: auto;
+  margin: auto;
+  @include flexbox;
+  max-width: 587px;
 }
 
 .pillGroup {
@@ -20,6 +70,15 @@ section {
 .controlPanel {
   border: 0;
   display: block;
+  @include flex(1);
+  min-width: 138px;
+  background-color: #121212;
+  text-align: center;
+  padding-top: 2em;
+}
+
+.div-canvas {
+  @include flex(0);
 }
 
 p {

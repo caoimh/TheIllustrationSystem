@@ -3,43 +3,35 @@
 <!--#include virtual="includes/meta.shtml" -->
 <!--#include virtual="includes/title.shtml" -->
 <link rel="stylesheet" href="styles/main.css">
-
-<style>
-body, html {
-  background-image: url('images/bg-16px-grey.png');
-  background-repeat: repeat;
-}
-
-.section-canvas {
-  width: 449px;
-  background: transparent;
-  margin: auto;
-}
-
-#c {
-  text-align: center;
-  padding: 0;
-  margin: auto;
-}
-
-
-</style>
 <!--#include virtual="includes/headscripts.shtml" -->
 <!--#include virtual="includes/headstop.shtml" -->
 <!--#include virtual="includes/bodystart.shtml" -->
 <!--#include virtual="includes/browsehappy.shtml" -->
 <!-- Controls control -->
 
-
-
-<section class="section-canvas">
-  <canvas id="c" height="448" width="448" style="margin-top: -1px;"></canvas>
+<section>
+  <!--<button class="ctrls">C</button>-->
+  <button class="opacity1">OP-1</button>
+  <button class="opacity05">OP-0.5</button>
+<!--
+  <button class="stroke-4px">4</button>
+  <button class="stroke-8px">8</button>
+  <button class="stroke-16px">16</button>
+-->
+  <button class="remover">R</button>
+  <input type="button" id="saveBtn" value="S+D" onclick="do_save()"></input>
+  <span id='dwn'></span>
 </section>
-<span class="controlPanel"></span>
-<button class="ctrls"></button>
-<button class="remover">Remover</button>
-<input type="button" id="saveBtn" value="save" onclick="do_save()"></input>
-<div id='dwn'></div>
+
+<section>
+  <span class="controlPanel"></span>
+  <div class="div-canvas">
+    <canvas id="c" height="448" width="448""></canvas>
+  </div>
+</section>
+
+
+
 
 <!--#include virtual="includes/basescripts.shtml" -->
 <!--#include virtual="includes/bodystop.shtml" -->
